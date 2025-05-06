@@ -87,6 +87,58 @@ body {
     transition: 0.3s;
 }
 
+.nav-item {
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #BEE5D3;
+    position: relative;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        rgba(190, 229, 211, 0.3) 20%, 
+        rgba(107, 70, 193, 0.7) 50%,
+        rgba(190, 229, 211, 0.3) 80%,
+        transparent 100%);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateX(-50%);
+    opacity: 0;
+    filter: blur(1px);
+}
+
+.nav-item:hover {
+    background: linear-gradient(90deg, 
+        rgba(190, 229, 211, 0.8) 20%, 
+        rgba(107, 70, 193, 1) 50%,
+        rgba(190, 229, 211, 0.8) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(190, 229, 211, 0.6), 0 0 30px rgba(107, 70, 193, 0.4);
+    transform: translateY(-2px);
+}
+
+.nav-item:hover::after {
+    width: 120%;
+    opacity: 1;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(190, 229, 211, 0.6), 0 0 30px rgba(107, 70, 193, 0.4);
+    transform: translateY(-2px);
+}
 
 .home-item {
     text-shadow: 0 0 10px rgba(190, 229, 211, 0.2);
@@ -1082,9 +1134,6 @@ body:hover .cursor-glow {
     transform: scale(1.05);
 }
 
-/* Add these styles to your existing styles.css file */
-
-/* Mobile Menu Styling */
 .mobile-menu {
     position: fixed;
     top: 120px;
@@ -1127,7 +1176,6 @@ body:hover .cursor-glow {
     color: #6b46c1;
     background: rgba(107, 70, 193, 0.1);
 }
-
 
 .menu-line {
     display: block;
@@ -1209,156 +1257,4 @@ body:hover .cursor-glow {
     background-color: rgba(220, 53, 69, 0.2);
     color: #E5BE9B;
     border: 1px solid rgba(220, 53, 69, 0.3);
-}
-
-@media (max-width: 768px) {
-    .header {
-        grid-template-columns: auto 1fr auto;
-        justify-content: space-between;
-        padding: 0 20px;
-    }
-
-    .mobile-menu-button {
-        display: flex;
-        order: 1; /* Move to first position */
-        position: static;
-        margin-right: auto;
-    }
-
-    .logo {
-        order: 2;
-        grid-column: auto;
-        margin: 0 auto;
-    }
-
-    /* Hide desktop nav items */
-    .nav-item.home-item,
-    .nav-item.work-item,
-    .nav-item.about-item,
-    .nav-item.contact-item {
-        display: none;
-    }
-
-    /* Adjust mobile menu position */
-    .mobile-menu {
-        top: 80px; /* Adjust based on your header height */
-    }
-}
-
-/* Prevent scrolling when mobile menu is open */
-.no-scroll {
-    overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    .header {
-        height: 120px; /* Adjust as needed */
-    }
-    
-    .logo {
-        height: 140px; /* Adjust as needed */
-        width: auto;
-    }
-    
-    .mobile-menu-button {
-        position: static;
-        margin-left: 0;
-    }
-}
-
-.nav-item {
-    cursor: pointer;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #BEE5D3;
-    position: relative;
-    text-decoration: none; /* Ensure no underline by default */
-    padding: 10px 15px; /* Add some padding for better hover area */
-}
-
-/* Underline animation */
-.nav-item::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        transparent 0%,
-        rgba(190, 229, 211, 0.3) 20%, 
-        rgba(107, 70, 193, 0.7) 50%,
-        rgba(190, 229, 211, 0.3) 80%,
-        transparent 100%);
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-    transform: translateX(-50%);
-    opacity: 0;
-    filter: blur(1px);
-}
-
-/* Hover effects */
-.nav-item:hover {
-    color: #ffffff;
-    text-shadow: 0 0 20px rgba(190, 229, 211, 0.6), 
-                0 0 30px rgba(107, 70, 193, 0.4);
-    transform: translateY(-2px);
-}
-
-.nav-item:hover::after {
-    width: 100%;
-    opacity: 1;
-}
-
-/* Special animation for home item */
-.home-item {
-    text-shadow: 0 0 10px rgba(190, 229, 211, 0.2);
-    animation: navPulse 3s infinite;
-}
-
-/* Add these styles to your existing styles.css file */
-
-/* Mobile Projects Carousel */
-@media (max-width: 768px) {
-    .projects-grid {
-        display: flex;
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-    }
-
-    .project-card {
-        min-width: 100%;
-        display: none;
-        transition: transform 0.5s ease;
-    }
-
-    .project-card.active {
-        display: block;
-    }
-
-    /* Make navigation buttons more visible on mobile */
-    .project-nav-button {
-        background: rgba(107, 70, 193, 0.3);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        font-size: 18px;
-        color: #BEE5D3;
-        z-index: 10;
-    }
-
-    .project-nav-button:hover {
-        background: rgba(107, 70, 193, 0.5);
-    }
-
-    /* Disable logo hover animation in mobile */
-    @media (max-width: 768px) {
-        .logo:hover {
-            transform: none;
-            filter: drop-shadow(0 0 20px rgba(107, 70, 193, 0.4));
-        }
-    }
 }

@@ -9,17 +9,13 @@
     });
 })();
 
-// Improved mobile menu functionality
+// Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     const menuButton = document.querySelector('.mobile-menu-button');
     const mobileMenu = document.querySelector('.mobile-menu');
     
     if (menuButton && mobileMenu) {
-        // Ensure the mobile menu is initially closed
-        mobileMenu.classList.remove('active');
-        
         menuButton.addEventListener('click', function() {
-            // Toggle the active class on the mobile menu
             mobileMenu.classList.toggle('active');
             
             // Toggle button appearance for X
@@ -50,6 +46,66 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Project navigation buttons
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    const projectsGrid = document.querySelector('.projects-grid');
+    
+    if (prevButton && nextButton && projectsGrid) {
+        let currentPosition = 0;
+        const projectCards = document.querySelectorAll('.project-card');
+        const totalProjects = projectCards.length;
+        
+        // Function to update visibility based on screen size
+        const updateProjectsVisibility = () => {
+            const isMobile = window.innerWidth <= 768;
+            const visibleProjects = isMobile ? 1 : window.innerWidth <= 1024 ? 2 : 3;
+            
+            projectCards.forEach((card, index) => {
+                if (index >= currentPosition && index < currentPosition + visibleProjects) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Update button state
+            prevButton.style.opacity = currentPosition === 0 ? '0.5' : '1';
+            nextButton.style.opacity = currentPosition + visibleProjects >= totalProjects ? '0.5' : '1';
+        };
+        
+        // Initial update
+        updateProjectsVisibility();
+        
+        // Add event listeners to buttons
+        prevButton.addEventListener('click', () => {
+            const isMobile = window.innerWidth <= 768;
+            const visibleProjects = isMobile ? 1 : window.innerWidth <= 1024 ? 2 : 3;
+            
+            if (currentPosition > 0) {
+                currentPosition--;
+                updateProjectsVisibility();
+            }
+        });
+        
+        nextButton.addEventListener('click', () => {
+            const isMobile = window.innerWidth <= 768;
+            const visibleProjects = isMobile ? 1 : window.innerWidth <= 1024 ? 2 : 3;
+            
+            if (currentPosition + visibleProjects < totalProjects) {
+                currentPosition++;
+                updateProjectsVisibility();
+            }
+        });
+        
+        // Update on resize
+        window.addEventListener('resize', updateProjectsVisibility);
+    }
+});
+
+// Add this to your script.js file
+
+document.addEventListener('DOMContentLoaded', function() {
     // Form submission handling
     const contactForm = document.getElementById('contact-form');
     const formSuccess = document.getElementById('form-success');
@@ -104,63 +160,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-});
-
-// Add this code to your existing script.js file
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Project carousel functionality for mobile
-    const projectCards = document.querySelectorAll('.project-card');
-    const prevButton = document.querySelector('.prev-button');
-    const nextButton = document.querySelector('.next-button');
-    
-    let currentProjectIndex = 0;
-    
-    // Initialize - show only the first project on mobile
-    function initProjectCarousel() {
-        if (window.innerWidth <= 768) {
-            projectCards.forEach((card, index) => {
-                if (index === currentProjectIndex) {
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active');
-                }
-            });
-        } else {
-            // On desktop, show all projects
-            projectCards.forEach(card => {
-                card.classList.add('active');
-            });
-        }
-    }
-    
-    // Navigate to previous project
-    function showPrevProject() {
-        if (window.innerWidth <= 768) {
-            projectCards[currentProjectIndex].classList.remove('active');
-            currentProjectIndex = (currentProjectIndex - 1 + projectCards.length) % projectCards.length;
-            projectCards[currentProjectIndex].classList.add('active');
-        }
-    }
-    
-    // Navigate to next project
-    function showNextProject() {
-        if (window.innerWidth <= 768) {
-            projectCards[currentProjectIndex].classList.remove('active');
-            currentProjectIndex = (currentProjectIndex + 1) % projectCards.length;
-            projectCards[currentProjectIndex].classList.add('active');
-        }
-    }
-    
-    // Add event listeners for navigation buttons
-    if (prevButton && nextButton) {
-        prevButton.addEventListener('click', showPrevProject);
-        nextButton.addEventListener('click', showNextProject);
-    }
-    
-    // Initialize carousel on page load
-    initProjectCarousel();
-    
-    // Reinitialize on window resize
-    window.addEventListener('resize', initProjectCarousel);
 });
