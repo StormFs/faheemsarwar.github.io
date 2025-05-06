@@ -105,3 +105,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Add this code to your existing script.js file
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Project carousel functionality for mobile
+    const projectCards = document.querySelectorAll('.project-card');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    
+    let currentProjectIndex = 0;
+    
+    // Initialize - show only the first project on mobile
+    function initProjectCarousel() {
+        if (window.innerWidth <= 768) {
+            projectCards.forEach((card, index) => {
+                if (index === currentProjectIndex) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+        } else {
+            // On desktop, show all projects
+            projectCards.forEach(card => {
+                card.classList.add('active');
+            });
+        }
+    }
+    
+    // Navigate to previous project
+    function showPrevProject() {
+        if (window.innerWidth <= 768) {
+            projectCards[currentProjectIndex].classList.remove('active');
+            currentProjectIndex = (currentProjectIndex - 1 + projectCards.length) % projectCards.length;
+            projectCards[currentProjectIndex].classList.add('active');
+        }
+    }
+    
+    // Navigate to next project
+    function showNextProject() {
+        if (window.innerWidth <= 768) {
+            projectCards[currentProjectIndex].classList.remove('active');
+            currentProjectIndex = (currentProjectIndex + 1) % projectCards.length;
+            projectCards[currentProjectIndex].classList.add('active');
+        }
+    }
+    
+    // Add event listeners for navigation buttons
+    if (prevButton && nextButton) {
+        prevButton.addEventListener('click', showPrevProject);
+        nextButton.addEventListener('click', showNextProject);
+    }
+    
+    // Initialize carousel on page load
+    initProjectCarousel();
+    
+    // Reinitialize on window resize
+    window.addEventListener('resize', initProjectCarousel);
+});
