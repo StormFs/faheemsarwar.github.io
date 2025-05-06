@@ -1133,3 +1133,98 @@ body:hover .cursor-glow {
 .project-card:hover .project-image {
     transform: scale(1.05);
 }
+
+/* Mobile Menu Fixes */
+.mobile-menu {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    z-index: 100;
+    border-bottom: 1px solid rgba(107, 70, 193, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu-item {
+    padding: 15px 0;
+    text-align: center;
+    color: #BEE5D3;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(107, 70, 193, 0.2);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu-item:hover {
+    color: #6b46c1;
+    background: rgba(107, 70, 193, 0.1);
+}
+
+/* Hero Section Mobile Fix */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 100px 20px 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 20px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .mobile-menu-button {
+        display: flex;
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        z-index: 101;
+    }
+}
+
+
+
+.form-message {
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
+.form-message.success {
+    background-color: rgba(107, 190, 70, 0.2);
+    color: #9BE5BE;
+    border: 1px solid rgba(107, 190, 70, 0.3);
+}
+
+.form-message.error {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #E5BE9B;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
