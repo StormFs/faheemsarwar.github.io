@@ -1134,7 +1134,7 @@ body:hover .cursor-glow {
     transform: scale(1.05);
 }
 
-/* Mobile Menu Fixes */
+/* Mobile Menu fixes */
 .mobile-menu {
     position: fixed;
     top: 120px;
@@ -1148,65 +1148,167 @@ body:hover .cursor-glow {
     z-index: 100;
     border-bottom: 1px solid rgba(107, 70, 193, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.mobile-menu.active {
+  }
+  
+  .mobile-menu.active {
     display: flex;
-}
-
-.mobile-menu-item {
-    padding: 15px 0;
-    text-align: center;
-    color: #BEE5D3;
-    text-decoration: none;
-    font-size: 18px;
-    border-bottom: 1px solid rgba(107, 70, 193, 0.2);
-    transition: all 0.3s ease;
-}
-
-.mobile-menu-item:last-child {
-    border-bottom: none;
-}
-
-.mobile-menu-item:hover {
-    color: #6b46c1;
-    background: rgba(107, 70, 193, 0.1);
-}
-
-/* Hero Section Mobile Fix */
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 100px 20px 60px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
+  }
+  
+  .mobile-menu-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+  }
+  
+  .menu-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #BEE5D3;
+    transition: 0.3s;
+  }
+  
+  /* Animation for hamburger to X */
+  .menu-line.open {
+    background: #6b46c1;
+  }
+  
+  .top-line.open {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .middle-line.open {
+    opacity: 0;
+  }
+  
+  .bottom-line.open {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  
+  /* Mobile view fixes */
+  @media (max-width: 768px) {
+    .header {
+      display: flex;
+      padding: 20px;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      height: 120px;
+      grid-template-columns: none;
     }
-
-    .profile-photo {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto 20px;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-        width: 100%;
-        text-align: center;
-        margin: 0 auto;
+    
+    .logo {
+      margin-left: auto;
+      order: 2;
     }
     
     .mobile-menu-button {
-        display: flex;
-        position: absolute;
-        top: 40px;
-        right: 20px;
-        z-index: 101;
+      display: flex;
+      order: 1;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
     }
-}
-
+    
+    /* Hide desktop navigation on mobile */
+    .nav-item {
+      display: none;
+    }
+    
+    /* Center content in mobile view */
+    .skills-section, 
+    .contact-section, 
+    .current-work-section,
+    .semester-section {
+      padding: 30px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .skills-header h2,
+    .contact-section h2,
+    .current-work-section h2,
+    .semester-section h2,
+    .projects-section h2 {
+      text-align: center;
+      width: auto;
+      margin: 0 auto 40px;
+      display: inline-block;
+    }
+    
+    .skills-grid,
+    .contact-form,
+    .current-work-card,
+    .semester-card-container {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .work-content {
+      padding: 30px 20px;
+    }
+    
+    /* Mobile menu items */
+    .mobile-menu-item {
+      padding: 15px 0;
+      text-align: center;
+      color: #BEE5D3;
+      text-decoration: none;
+      font-size: 18px;
+      border-bottom: 1px solid rgba(107, 70, 193, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-item:last-child {
+      border-bottom: none;
+    }
+    
+    .mobile-menu-item:hover {
+      color: #6b46c1;
+      background: rgba(107, 70, 193, 0.1);
+    }
+    
+    /* Project section fix for mobile */
+    .projects-container {
+      padding: 0 20px;
+      margin-bottom: 80px;
+    }
+  }
+  
+  /* Further adjustments for smaller screens */
+  @media (max-width: 480px) {
+    .skills-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .semester-card {
+      padding: 30px;
+    }
+    
+    .projects-container {
+      padding: 0 10px;
+    }
+    
+    .project-nav-button {
+      width: 35px;
+      height: 35px;
+    }
+  }
 
 
 .form-message {
