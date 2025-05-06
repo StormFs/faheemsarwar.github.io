@@ -9,14 +9,17 @@
     });
 })();
 
-// Updated mobile menu functionality
+// Improved mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     const menuButton = document.querySelector('.mobile-menu-button');
     const mobileMenu = document.querySelector('.mobile-menu');
     
     if (menuButton && mobileMenu) {
+        // Ensure the mobile menu is initially closed
+        mobileMenu.classList.remove('active');
+        
         menuButton.addEventListener('click', function() {
-            // Toggle the active class instead of display property
+            // Toggle the active class on the mobile menu
             mobileMenu.classList.toggle('active');
             
             // Toggle button appearance for X
@@ -46,10 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-});
-// Add this to your script.js file
-
-document.addEventListener('DOMContentLoaded', function() {
+    
     // Form submission handling
     const contactForm = document.getElementById('contact-form');
     const formSuccess = document.getElementById('form-success');
