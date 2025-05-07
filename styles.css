@@ -175,7 +175,7 @@ body {
     transform: scale(1.05);
     filter: drop-shadow(0 0 30px rgba(107, 70, 193, 0.6));
     width: 100px;
-    margin-top: 20px;
+    transform: translate(0, -10px);
 }
 
 .hero-section {
@@ -303,6 +303,9 @@ body {
     max-width: 1200px;
     margin: 0 auto 160px;
     perspective: 1000px;
+    position: relative;
+    z-index: 10; /* Ensure it's above other elements */
+
 }
 
 .semester-card-container {
@@ -973,6 +976,11 @@ html {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .semester-section{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
     
     .semester-card {
         padding: 40px;
@@ -1037,9 +1045,25 @@ html {
         max-width: 100%;
     }
     
+    .semester-section {
+        margin: 0 auto 120px;
+        perspective: 600px;
+        z-index: 10;
+        position: relative;
+    }
+    
+    .semester-card-container {
+        transform: rotateX(5deg); /* Reduced rotation for better mobile view */
+        transform-style: preserve-3d; /* Keep 3D effect */
+        animation: float 6s ease-in-out infinite; /* Keep animation */
+    }
+    
     .semester-card {
         padding: 40px;
         width: 100%;
+        box-shadow: 0 20px 40px rgba(107, 70, 193, 0.3);
+        position: relative;
+        z-index: 5; /* Add z-index to ensure visibility */
     }
     
     .semester-card p {
@@ -1105,13 +1129,14 @@ html {
         font-size: 2.2rem;
     }
     
-    .semester-card {
-        padding: 30px 20px;
+    .semester-section {
+        margin: 0 auto 80px;
+        perspective: 400px; /* Reduced perspective for better mobile view */
     }
     
-    .semester-card h3 {
-        font-size: 22px;
-        letter-spacing: 2px;
+    .semester-card {
+        padding: 30px 20px;
+        box-shadow: 0 10px 30px rgba(107, 70, 193, 0.3);
     }
     
     .semester-card p {
