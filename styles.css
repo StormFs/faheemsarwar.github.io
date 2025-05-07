@@ -155,7 +155,7 @@ body {
     position: relative;
     filter: drop-shadow(0 0 20px rgba(107, 70, 193, 0.4));
     width: 100px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .logo::before {
@@ -993,42 +993,28 @@ html {
     
     .mobile-menu-button {
         display: flex;
-    }
-    
-    .nav-item {
         position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #0A0A0F;
-        padding: 20px;
-        border-top: 1px solid rgba(107, 70, 193, 0.2);
-        z-index: 99;
+        top: 40px;
+        right: 20px;
+        z-index: 101;
+    }
+    
+    .nav-item.home-item,
+    .nav-item.work-item,
+    .nav-item.about-item,
+    .nav-item.contact-item {
         display: none;
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-    
-    .home-item {
-        display: flex;
-    }
-    
-    .work-item {
-        top: calc(100% + 60px);
-    }
-    
-    .about-item {
-        top: calc(100% + 120px);
-    }
-    
-    .contact-item {
-        top: calc(100% + 180px);
     }
     
     .logo {
-        width: 100px;
-        height: 100px;
+        grid-column: 1;
+        justify-self: start;
+        margin-left: 20px;
+        border-top: none;
+    }
+    
+    .logo::before {
+        border-top: none;
     }
     
     .hero-title {
@@ -1310,7 +1296,7 @@ body:hover .cursor-glow {
     .logo {
         grid-column: 1;
         justify-self: start;
-        margin-left: 20px;
+        margin-left: 0px;
     }
     
     .header {
