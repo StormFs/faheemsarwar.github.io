@@ -102,6 +102,7 @@ body {
     align-items: center;
     color: #BEE5D3;
     position: relative;
+    text-decoration: none;
 }
 
 .nav-item::after {
@@ -138,12 +139,6 @@ body {
 .nav-item:hover::after {
     width: 120%;
     opacity: 1;
-}
-
-.nav-item:hover {
-    color: #ffffff;
-    text-shadow: 0 0 20px rgba(190, 229, 211, 0.6), 0 0 30px rgba(107, 70, 193, 0.4);
-    transform: translateY(-2px);
 }
 
 .home-item {
