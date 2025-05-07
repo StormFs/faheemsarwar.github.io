@@ -187,9 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 });
-
 // Add this to your script.js file
-
 document.addEventListener('DOMContentLoaded', function() {
     // Form submission handling
     const contactForm = document.getElementById('contact-form');
