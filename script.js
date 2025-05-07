@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const middleLine = menuButton.querySelector('.middle-line');
             const bottomLine = menuButton.querySelector('.bottom-line');
             
-            topLine.classList.toggle('open');
-            middleLine.classList.toggle('open');
-            bottomLine.classList.toggle('open');
+            if (topLine && middleLine && bottomLine) {
+                topLine.classList.toggle('open');
+                middleLine.classList.toggle('open');
+                bottomLine.classList.toggle('open');
+            }
         });
         
         // Close mobile menu when clicking a link
@@ -39,9 +41,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const middleLine = menuButton.querySelector('.middle-line');
                 const bottomLine = menuButton.querySelector('.bottom-line');
                 
-                topLine.classList.remove('open');
-                middleLine.classList.remove('open');
-                bottomLine.classList.remove('open');
+                if (topLine && middleLine && bottomLine) {
+                    topLine.classList.remove('open');
+                    middleLine.classList.remove('open');
+                    bottomLine.classList.remove('open');
+                }
             });
         });
     }
