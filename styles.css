@@ -481,21 +481,25 @@ body {
     margin-bottom: 160px;
     position: relative;
     padding: 0 60px;
+    overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    transition: transform 0.5s ease-out; /* Add smooth transition for sliding */
 }
 
 .project-card {
     background: rgba(107, 70, 193, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Add transitions for hover and slide effects */
     cursor: pointer;
     display: block;
+    transform-origin: center center; /* Set transform origin for smoother animations */
+    will-change: transform, opacity; /* Optimize for animations */
 }
 
 .project-card:hover {
@@ -805,7 +809,7 @@ footer {
     transition: all 0.3s ease;
 }
 
-.social-links a:hover {
+social-links a:hover {
     color: #6b46c1;
     transform: translateY(-3px) scale(1.1);
 }
@@ -1077,7 +1081,16 @@ html {
     
     .projects-grid {
         grid-template-columns: 1fr;
+        width: 85%; /* Reduced width from 100% to 85% */
+        margin: 0 auto; /* Center the grid with auto margins */
+    }
+    
+    .projects-container {
+        padding: 0 20px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the container contents */
     }
     
     .projects-container {
@@ -1160,7 +1173,11 @@ html {
     
     .project-card {
         margin: 0 auto;
-        width: 100%;
+        width: 90%; /* Reduced from 100% to 90% */
+    }
+    
+    .projects-grid {
+        width: 80%; /* Even narrower for smaller screens */
     }
     
     .skills-list {
@@ -1358,4 +1375,3 @@ body:hover .cursor-glow {
     color: #E5BE9B;
     border: 1px solid rgba(220, 53, 69, 0.3);
 }
-

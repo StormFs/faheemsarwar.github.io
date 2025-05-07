@@ -61,10 +61,57 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalProjects = projectCards.length;
         
         // Function to update visibility based on screen size
-        const updateProjectsVisibility = () => {
+        const updateProjectsVisibility = (direction = null) => {
             const isMobile = window.innerWidth <= 768;
             const visibleProjects = isMobile ? 1 : window.innerWidth <= 1024 ? 2 : 3;
             
+            // First, remove any existing animation classes
+            projectCards.forEach(card => {
+                card.classList.remove('sliding-left', 'sliding-right', 'sliding-out-left', 'sliding-out-right', 'sliding-with-left', 'sliding-with-right');
+            });
+            
+            // Apply slide animations based on direction
+            if (direction === 'prev') {
+                // Apply animations to cards becoming visible or staying visible
+                for (let i = currentPosition; i < currentPosition + visibleProjects; i++) {
+                    if (i >= 0 && i < totalProjects) {
+                        if (i === currentPosition) {
+                            // Newly visible card
+                            projectCards[i].classList.add('sliding-right');
+                        } else {
+                            // Card that slides with the new card
+                            projectCards[i].classList.add('sliding-with-right');
+                        }
+                    }
+                }
+                
+                // Animation for card being hidden
+                const toBeHiddenIndex = currentPosition + visibleProjects;
+                if (toBeHiddenIndex < totalProjects) {
+                    projectCards[toBeHiddenIndex].classList.add('sliding-out-right');
+                }
+            } else if (direction === 'next') {
+                // Apply animations to cards becoming visible or staying visible
+                for (let i = currentPosition; i < currentPosition + visibleProjects; i++) {
+                    if (i >= 0 && i < totalProjects) {
+                        if (i === currentPosition + visibleProjects - 1) {
+                            // Newly visible card
+                            projectCards[i].classList.add('sliding-left');
+                        } else {
+                            // Card that slides with the new card
+                            projectCards[i].classList.add('sliding-with-left');
+                        }
+                    }
+                }
+                
+                // Animation for card being hidden
+                const toBeHiddenIndex = currentPosition - 1;
+                if (toBeHiddenIndex >= 0) {
+                    projectCards[toBeHiddenIndex].classList.add('sliding-out-left');
+                }
+            }
+            
+            // Update visibility of cards
             projectCards.forEach((card, index) => {
                 if (index >= currentPosition && index < currentPosition + visibleProjects) {
                     card.style.display = 'block';
@@ -88,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (currentPosition > 0) {
                 currentPosition--;
-                updateProjectsVisibility();
+                updateProjectsVisibility('prev');
             }
         });
         
@@ -98,12 +145,46 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (currentPosition + visibleProjects < totalProjects) {
                 currentPosition++;
-                updateProjectsVisibility();
+                updateProjectsVisibility('next');
             }
         });
         
         // Update on resize
-        window.addEventListener('resize', updateProjectsVisibility);
+        window.addEventListener('resize', () => updateProjectsVisibility());
+        
+        // Add touch swipe functionality for mobile devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        projectsGrid.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        projectsGrid.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+        
+        // Handle swipe direction
+        const handleSwipe = () => {
+            const swipeThreshold = 50; // Minimum pixels to be considered a swipe
+            
+            if (touchEndX < touchStartX - swipeThreshold) {
+                // Swipe left, go to next
+                if (currentPosition + (window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3) < totalProjects) {
+                    currentPosition++;
+                    updateProjectsVisibility('next');
+                }
+            }
+            
+            if (touchEndX > touchStartX + swipeThreshold) {
+                // Swipe right, go to previous
+                if (currentPosition > 0) {
+                    currentPosition--;
+                    updateProjectsVisibility('prev');
+                }
+            }
+        };
     }
 });
 
