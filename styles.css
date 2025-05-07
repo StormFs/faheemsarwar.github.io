@@ -173,7 +173,7 @@ body {
 }
 
 .logo:hover {
-    transform: scale(1.05) translateY(-5px);
+    transform: scale(1.05);
     filter: drop-shadow(0 0 30px rgba(107, 70, 193, 0.6));
     width: 100px;
     margin-top: 20px;
