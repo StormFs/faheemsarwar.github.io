@@ -933,14 +933,22 @@ html {
     
     .about-section {
         padding: 30px 20px;
+        width: 100%;
     }
     
     .current-work-section {
         padding: 30px 20px;
+        width: 100%;
     }
     
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .semester-card {
+        padding: 40px;
+        width: 100%;
+        max-width: 90%;
     }
 }
 
@@ -950,6 +958,7 @@ html {
         justify-content: space-between;
         grid-template-columns: auto auto;
         gap: 20px;
+        width: 100%;
     }
     
     .mobile-menu-button {
@@ -996,21 +1005,26 @@ html {
         font-size: 3rem;
         letter-spacing: 0.3rem;
         width: 100%;
+        padding: 0 10px;
     }
     
     .profile-photo {
         width: 250px;
         height: 250px;
+        max-width: 90%;
     }
     
     .about-content {
         font-size: 18px;
         line-height: 1.8;
         padding: 30px;
+        width: 100%;
+        max-width: 100%;
     }
     
     .semester-card {
-        padding: 40px 60px;
+        padding: 40px;
+        width: 100%;
     }
     
     .semester-card p {
@@ -1019,14 +1033,17 @@ html {
     
     .skills-grid {
         grid-template-columns: 1fr;
+        width: 100%;
     }
     
     .projects-grid {
         grid-template-columns: 1fr;
+        width: 100%;
     }
     
     .projects-container {
-        padding: 0 45px;
+        padding: 0 20px;
+        width: 100%;
     }
     
     .project-nav-button {
@@ -1036,26 +1053,87 @@ html {
     }
     
     .current-work-card {
-        padding: 0 20px;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .work-content {
+        padding: 30px;
+        width: 100%;
     }
     
     .skills-list {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .contact-form {
+        padding: 20px;
+        width: 100%;
+    }
+    
+    .hero-section,
+    .about-section,
+    .semester-section,
+    .skills-section,
+    .projects-section,
+    .current-work-section,
+    .contact-section {
+        width: 100%;
+        overflow-x: hidden;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+    
+    .semester-card {
+        padding: 30px 20px;
     }
     
     .semester-card h3 {
-        font-size: 28px;
-        letter-spacing: 3px;
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+    
+    .semester-card p {
+        font-size: 60px;
+    }
+    
+    .work-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
     
     .work-header h3 {
-        font-size: 22px;
+        font-size: 20px;
+    }
+    
+    .profile-photo {
+        width: 90%;
+        height: auto;
+    }
+    
+    .project-card {
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .skills-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .skill-item i {
+        font-size: 2rem;
+    }
+    
+    .skill-item span {
+        font-size: 0.8rem;
     }
 }
 
