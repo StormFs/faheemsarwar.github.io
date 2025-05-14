@@ -795,6 +795,52 @@ footer {
     color: #BEE5D3;
 }
 
+.flogo {
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.flogo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 4px 20px rgba(107, 70, 193, 0.3));
+    position: relative;
+    z-index: 2;
+}
+
+.flogo::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(107, 70, 193, 0.4) 0%, rgba(107, 70, 193, 0.1) 70%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: pulseGlow 3s ease-in-out infinite;
+    z-index: 1;
+}
+
+.flogo:hover::before {
+    opacity: 1;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
 .social-links {
     display: flex;
     justify-content: center;
@@ -1373,4 +1419,81 @@ body:hover .cursor-glow {
     background-color: rgba(220, 53, 69, 0.2);
     color: #E5BE9B;
     border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #6b46c1, #BEE5D3);
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
+}
+
+.back-to-top-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(107, 70, 193, 0.5);
+    background: linear-gradient(45deg, #553c9a, #9DD4BE);
+}
+
+.back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.back-to-top-btn i {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Mobile responsiveness for back-to-top button */
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+.footer-location {
+    color: #BEE5D3;
+    font-size: 16px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+}
+
+.footer-location i {
+    color: #6b46c1;
+    font-size: 18px;
 }
