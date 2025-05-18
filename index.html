@@ -4,7 +4,48 @@
     <meta name="google-site-verification" content="OjMi7F82YJrtnxVzt_elb1QhysRSJ6GuY7XuQxXxNsk" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faheem Sarwar</title>
+    <meta name="description" content="Faheem Sarwar - Computer Science Student, CS Teacher, and Technologist. Specializing in web development, AI, and digital learning solutions.">
+    <meta name="keywords" content="Faheem Sarwar, Computer Science, Web Development, AI, Digital Learning, Software Developer, Portfolio">
+    <meta name="author" content="Faheem Sarwar">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://faheemsarwar.github.io" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://faheemsarwar.github.io">
+    <meta property="og:title" content="Faheem Sarwar - Portfolio">
+    <meta property="og:description" content="Computer Science Student, CS Teacher, and Technologist specializing in web development and AI solutions.">
+    <meta property="og:image" content="https://faheemsarwar.github.io/mainpic.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://faheemsarwar.github.io">
+    <meta property="twitter:title" content="Faheem Sarwar - Portfolio">
+    <meta property="twitter:description" content="Computer Science Student, CS Teacher, and Technologist specializing in web development and AI solutions.">
+    <meta property="twitter:image" content="https://faheemsarwar.github.io/mainpic.png">
+
+    <title>Faheem Sarwar - Computer Science Student & Developer</title>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Faheem Sarwar",
+            "url": "https://faheemsarwar.github.io",
+            "image": "https://faheemsarwar.github.io/mainpic.png",
+            "sameAs": [
+                "https://github.com/StormFs",
+                "https://www.linkedin.com/in/faheem-sarwar-3a3a662a4/"
+            ],
+            "jobTitle": "Computer Science Teacher",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "The Future Professionals"
+            },
+            "description": "Computer Science Student, CS Teacher, and Technologist specializing in web development and AI solutions."
+        }
+    </script>
+
+
     <link rel="icon" href="fav.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap" rel="stylesheet">
@@ -20,305 +61,320 @@
     </style>
 </head>
 <body>
+    
     <div class="header-container">
-        <div class="header">
-            <button class="mobile-menu-button">
+        <header class="header">
+            <button class="mobile-menu-button" aria-label="Toggle mobile menu">
                 <span class="menu-line top-line"></span>
                 <span class="menu-line middle-line"></span>
                 <span class="menu-line bottom-line"></span>
             </button>   
-            <a class="nav-item home-item" href="#home"><span>Home</span></a>
-            <a class="nav-item work-item" href="#projects"><span>Work</span></a>
-            <div class="logo">
-                <a href="#home"><img src="./logo.png" alt="Faheem Sarwar Logo" width="100" /></a>
-            </div>
-    
-            <a class="nav-item about-item" href="#about"><span>About</span></a>
-            <a class="nav-item contact-item" href="#contact"><span>Contact</span></a>
-        </div>
+                <a class="nav-item home-item" href="#home"><span>Home</span></a>
+                <a class="nav-item work-item" href="#projects"><span>Work</span></a>
+                <div class="logo">
+                    <a href="#home"><img src="./logo.png" alt="Faheem Sarwar Logo" width="100" /></a>
+                </div>
+                <a class="nav-item about-item" href="#about"><span>About</span></a>
+                <a class="nav-item contact-item" href="#contact"><span>Contact</span></a>
+        </header>
     </div>
     
-    <div class="mobile-menu">
+    <nav class="mobile-menu" aria-label="Mobile navigation">
         <a href="#home" class="mobile-menu-item">Home</a>
         <a href="#about" class="mobile-menu-item">About</a>
         <a href="#projects" class="mobile-menu-item">Work</a>
         <a href="#contact" class="mobile-menu-item">Contact</a>
-    </div>
+    </nav>
 
-    <div class="hero-section" id="home">
-        <img src="./mainpic.png" alt="Profile Photo" class="profile-photo">
-        <h1 class="hero-title">Faheem Sarwar</h1>
-    </div>
+    <main>
+        <section class="hero-section" id="home">
+            <img src="./mainpic.png" alt="Faheem Sarwar Profile Photo" class="profile-photo">
+            <h1 class="hero-title">Faheem Sarwar</h1>
+        </section>
 
-    <div class="about-section" id="about">
-        <h2>ABOUT ME</h2>
-        <div class="about-content">
-            <p>
-                <span class="highlight-text">I'm Faheem Sarwar — a computer science student, CS teacher, and technologist.</span>
-                <span>My past in motion graphics taught me how to captivate attention, and my current work in development helps me turn ideas into tools that matter—whether it's a note-taking app, an educational platform, or a clean, responsive website.</span>
-                <span class="highlight-text">My interests stretch into AI, digital learning, and crafting elegant solutions that connect people and purpose.</span>
-            </p>
-        </div>
-    </div>
-
-    <div class="semester-section" id="semester">
-        <div class="semester-card-container">
-            <div class="semester-card">
-                <h3>Current Semester</h3>
-                <p>4</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="skills-section" id="skills">
-        <div class="skills-header">
-            <h2>SKILLS</h2>
-        </div>
-        
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Languages & Technologies</h3>
-                <div class="skills-list">
-                    <div class="skill-item">
-                        <i class="fas fa-code"></i>
-                        <span>C++</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-code"></i>
-                        <span>C</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-js"></i>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-html5"></i>
-                        <span>HTML</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-css3-alt"></i>
-                        <span>CSS</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-python"></i>
-                        <span>Python</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-database"></i>
-                        <span>SQL</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-microchip"></i>
-                        <span>Assembly</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <h3>Frameworks & Libraries</h3>
-                <div class="skills-list">
-                    <div class="skill-item">
-                        <i class="fab fa-react"></i>
-                        <span>React</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-node-js"></i>
-                        <span>Node.js</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-server"></i>
-                        <span>Express</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-python"></i>
-                        <span>Django</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-gamepad"></i>
-                        <span>SFML</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="./Nextjs.png" alt="favi" class="favi", width="40px", style="margin-bottom: 8px;">
-                        <span>Next.JS</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="./vite.png" alt="favi" class="favi", width="40px", style="margin-bottom: 8px;">
-                        <span>Vite</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="./bootstrap.png" alt="favi" class="favi", width="40px", style="margin-bottom: 8px;">
-                        <span>Bootstrap</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <h3>Tools</h3>
-                <div class="skills-list">
-                    <div class="skill-item">
-                        <i class="fab fa-git-alt"></i>
-                        <span>Git</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-docker"></i>
-                        <span>Docker</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-fedora"></i>
-                        <span>Fedora</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-code"></i>
-                        <span>VS Code</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-video"></i>
-                        <span>OBS</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="projects-section" id="projects">
-        <h2>PROJECTS</h2>
-        <div class="projects-container">
-            <button class="project-nav-button prev-button">←</button>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/StormFs/Project-Tableegh/main/screenshots/screenshot1.png'); background-size: cover;"></div>
-                    <div class="project-info">
-                        <h3>Text Editor</h3>
-                        <p>A desktop application that works like a notepad and can be used to store important notes.</p>
-                        <a href="https://github.com/StormFs/Project-Tableegh" target="_blank" class="project-link">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-color: #2a2a2a; display: flex; justify-content: center; align-items: center;">
-                        <i class="fas fa-users" style="font-size: 3rem; color: #6b46c1;"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Social Media Clone</h3>
-                        <p>A CLI based social media application that can store users' information in separate files.</p>
-                        <a href="https://github.com/StormFs/OOP-Project" target="_blank" class="project-link">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-color: #2a2a2a; display: flex; justify-content: center; align-items: center;">
-                        <i class="fas fa-gamepad" style="font-size: 3rem; color: #6b46c1;"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Hangman Game</h3>
-                        <p>A desktop game built using SFML and C++ with interactive graphics and gameplay.</p>
-                        <a href="https://github.com/avexxx3/Hangman" target="_blank" class="project-link">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-color: #2a2a2a; display: flex; justify-content: center; align-items: center;">
-                        <i class="fas fa-gamepad" style="font-size: 3rem; color: #6b46c1;"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Notepad</h3>
-                        <p>A lightweight, console-based text editor that mimics the functionality of advanced text-editing software</p>
-                        <a href="https://github.com/StormFs/Project-Notepad--" target="_blank" class="project-link">View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-            
-            <button class="project-nav-button next-button">→</button>
-        </div>
-    </div>
-
-    <div class="contact-section" id="contact">
-        <h2>CONTACT</h2>
-        <form class="contact-form" action="https://formspree.io/f/xanoozop" method="POST" id="contact-form">
-            <div class="form-group">
-                <label>
-                    <span>Name</span>
-                </label>
-                <input type="text" name="name" required>
-            </div>
-            <div class="form-group">
-                <label>
-                    <span>Email</span>
-                </label>
-                <input type="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label>
-                    <span>Message</span>
-                </label>
-                <textarea name="message" required></textarea>
-            </div>
-            <div class="form-submit">
-                <button type="submit">Send Message</button>
-            </div>
-            <div class="form-message" id="form-success">Message sent successfully! I'll get back to you soon.</div>
-            <div class="form-message" id="form-error">Something went wrong. Please try again.</div>
-        </form>
-    </div>
-
-    <div class="current-work-section" id="current-work">
-        <h2>WORKING ON</h2>
-        <div class="current-work-card">
-            <div class="work-content">
-                <div class="work-header">
-                    <h3>
-                        <div class="work-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <span>Tafakkur</span>
-                    </h3>
-                    <span class="work-status">In Progress</span>
-                </div>
+        <section class="about-section" id="about">
+            <h2>ABOUT ME</h2>
+            <div class="about-content">
                 <p>
-                    A comprehensive Islamic learning platform featuring:
-                    <ul class="work-features">
-                        <li>Quran reading with tajweed rules</li>
-                        <li>Hadith collection with search functionality</li>
-                        <li>Islamic knowledge base</li>
-                        <li>User progress tracking</li>
-                    </ul>
-                    Built with modern web technologies to provide an accessible learning experience.
+                    <span class="highlight-text">I'm Faheem Sarwar — a computer science student, CS teacher, and technologist.</span>
+                    <span>My past in motion graphics taught me how to captivate attention, and my current work in development helps me turn ideas into tools that matter—whether it's a note-taking app, an educational platform, or a clean, responsive website.</span>
+                    <span class="highlight-text">My interests stretch into AI, digital learning, and crafting elegant solutions that connect people and purpose.</span>
                 </p>
-                <div class="progress-container">
-                    <div class="progress-info">
-                        <span>Progress</span>
-                        <span>65%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 65%;"></div>
-                    </div>
-                </div>
-                <a href="https://github.com/StormFs/Project-Tableegh" target="_blank" class="github-link">
-                    <i class="fab fa-github"></i> View on GitHub
-                </a>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <section class="semester-section" id="semester">
+            <div class="semester-card-container">
+                <div class="semester-card">
+                    <h3>Current Semester</h3>
+                    <p>4</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section" id="skills">
+            <h2>SKILLS</h2>
+            <div class="skills-grid">
+                <article class="skill-category">
+                    <h3>Languages & Technologies</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>C</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-microchip"></i>
+                            <span>Assembly</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i>
+                            <span>Express</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Django</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-gamepad"></i>
+                            <span>SFML</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./Nextjs.png" alt="favi" class="favi", width="40px", style="margin-bottom: 8px;">
+                            <span>Next.JS</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./vite.png" alt="favi" class="favi", width="40px", style="margin-bottom: 8px;">
+                            <span>Vite</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./bootstrap.png" alt="favi" class="favi", width="40px", style="margin-bottom: 8px;">
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-fedora"></i>
+                            <span>Fedora</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>VS Code</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-video"></i>
+                            <span>OBS</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="projects-section" id="projects">
+            <h2>PROJECTS</h2>
+            <div class="projects-container">
+                <button class="project-nav-button prev-button" aria-label="Previous project">←</button>
+                
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/StormFs/Project-Tableegh/main/screenshots/screenshot1.png'); background-size: cover;"></div>
+                        <div class="project-info">
+                            <h3>Text Editor</h3>
+                            <p>A desktop application that works like a notepad and can be used to store important notes.</p>
+                            <a href="https://github.com/StormFs/Project-Tableegh" target="_blank" class="project-link">View on GitHub</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image" style="background-color: #2a2a2a; display: flex; justify-content: center; align-items: center;">
+                            <i class="fas fa-users" style="font-size: 3rem; color: #6b46c1;"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Social Media Clone</h3>
+                            <p>A CLI based social media application that can store users' information in separate files.</p>
+                            <a href="https://github.com/StormFs/OOP-Project" target="_blank" class="project-link">View on GitHub</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image" style="background-color: #2a2a2a; display: flex; justify-content: center; align-items: center;">
+                            <i class="fas fa-gamepad" style="font-size: 3rem; color: #6b46c1;"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Hangman Game</h3>
+                            <p>A desktop game built using SFML and C++ with interactive graphics and gameplay.</p>
+                            <a href="https://github.com/avexxx3/Hangman" target="_blank" class="project-link">View on GitHub</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image" style="background-color: #2a2a2a; display: flex; justify-content: center; align-items: center;">
+                            <i class="fas fa-gamepad" style="font-size: 3rem; color: #6b46c1;"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Notepad</h3>
+                            <p>A lightweight, console-based text editor that mimics the functionality of advanced text-editing software</p>
+                            <a href="https://github.com/StormFs/Project-Notepad--" target="_blank" class="project-link">View on GitHub</a>
+                        </div>
+                    </article>
+                </div>
+                
+                <button class="project-nav-button next-button" aria-label="Next project">→</button>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <h2>CONTACT</h2>
+            <form class="contact-form" action="https://formspree.io/f/xanoozop" method="POST" id="contact-form">
+                <div class="form-group">
+                    <label>
+                        <span>Name</span>
+                    </label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <span>Email</span>
+                    </label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <span>Message</span>
+                    </label>
+                    <textarea name="message" required></textarea>
+                </div>
+                <div class="form-submit">
+                    <button type="submit">Send Message</button>
+                </div>
+                <div class="form-message" id="form-success">Message sent successfully! I'll get back to you soon.</div>
+                <div class="form-message" id="form-error">Something went wrong. Please try again.</div>
+            </form>
+        </section>
+
+        <section class="current-work-section" id="current-work">
+            <h2>WORKING ON</h2>
+            <article class="current-work-card">
+                <div class="work-content">
+                    <div class="work-header">
+                        <h3>
+                            <div class="work-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <span>Tafakkur</span>
+                        </h3>
+                        <span class="work-status">In Progress</span>
+                    </div>
+                    <p>
+                        A comprehensive Islamic learning platform featuring:
+                        <ul class="work-features">
+                            <li>Quran reading with tajweed rules</li>
+                            <li>Hadith collection with search functionality</li>
+                            <li>Islamic knowledge base</li>
+                            <li>User progress tracking</li>
+                        </ul>
+                        Built with modern web technologies to provide an accessible learning experience.
+                    </p>
+                    <div class="progress-container">
+                        <div class="progress-info">
+                            <span>Progress</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%;"></div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/StormFs/Project-Tableegh" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
 
     <footer>
         <div class="flogo">
             <a href="#home"><img src="./fav.png" alt="Faheem Sarwar Logo" width="100" /></a>
         </div>  
-        <div class="footer-location">
-            <i class="fas fa-map-marker-alt"></i> Lahore, Pakistan
+        <address class="footer-location">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Lahore, Pakistan
+        </address>
+        <nav class="social-links">
+            <a href="https://github.com/StormFs" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/faheem-sarwar-3a3a662a4/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:faheemsarwar1712@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+        </nav>
+        <div class="copyright">
+            <p>Copyright © Faheem Sarwar. All rights reserved.</p>
         </div>
-        <div class="social-links">
-            <a href="https://github.com/StormFs" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/faheem-sarwar-3a3a662a4/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="mailto:faheemsarwar1712@gmail.com" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-        <div class="copyright"><p1>
-            Copyright © Faheem Sarwar. All rights reserved.</p1></div>
     </footer>
+
+    <!-- Add structured data for Website -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Faheem Sarwar Portfolio",
+        "url": "https://faheemsarwar.github.io",
+        "description": "Portfolio website of Faheem Sarwar - Computer Science Student, CS Teacher, and Technologist",
+        "author": {
+            "@type": "Person",
+            "name": "Faheem Sarwar"
+        }
+    }
+    </script>
     <div id="oneko-cat"></div>
     <button id="back-to-top" class="back-to-top-btn">
         <i class="fas fa-arrow-up"></i>
