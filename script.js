@@ -21,17 +21,32 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                if (entry.target.classList.contains('project-card')) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'scale(1)';
+                }
             } else {
                 // Remove visible class when element leaves viewport
                 entry.target.classList.remove('visible');
+                if (entry.target.classList.contains('project-card')) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'scale(0.95)';
+                }
             }
         });
     }, observerOptions);
 
-    // Observe main sections
+    // Observe main sections and project cards
     const sections = document.querySelectorAll('.hero-section, .about-section, .skills-section, .projects-section, .contact-section, .current-work-section');
+    const projectCards = document.querySelectorAll('.project-card');
+    
     sections.forEach(section => {
         observer.observe(section);
+    });
+    
+    projectCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.2}s`;
+        observer.observe(card);
     });
 
     // Mobile menu functionality
